@@ -16,7 +16,7 @@ Home Assistant supervised installer for 32bit systems
 Home Assistant - это экосистема домашней автоматизации с полным пользовательским интерфейсом, в которой работают Home Assistant Core, Home Assistant Supervisor и надстройки. Он предустановлен в ОС Home Assistant, но может быть установлен в любой системе Linux. Он использует Docker, которым управляет Home Assistant Supervisor, плюс дополнительное преимущество десятков надстроек (например, магазин приложений), которые изначально работают в среде Home Assistant.
 
 Если вы новичок в Home Assistant, теперь вы можете перейти к Разделу 1, если вам нужна помощь в установке Debian 11. Если у вас уже установлен Debian 11 и вы хотите перейти к установке Home Assistant, перейдите к Разделу 2.
-
+https://raw.githubusercontent.com/ntguest/32bit-home-assistant-supervised-installer/main/files/installer.sh
 ## Раздел 1 - Установка Debian
 
 <details>
