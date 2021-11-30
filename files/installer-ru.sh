@@ -102,17 +102,17 @@ if [ ! -f "$FILE_NM_CONNECTION" ]; then
 fi
 
 warn "Изменения нужно записать в файл /etc/network/interfaces"
-info "If you have modified the network on the host manualy, those can now be overwritten"
-info "If you do not overwrite this now you need to manually adjust it later"
-info "Do you want to proceed with overwriting the /etc/network/interfaces file? [N/y] "
+info "Если вы вручную изменили сеть на хосте, теперь изменения будут перезаписаны"
+info "Если вы не перезапишите сейчас, вам нужно будет сделать это позже вручную"
+info "Вы хотите продолжить перезапись файла /etc/network/interfaces file? [N/y] "
 read answer < /dev/tty
 
 if [[ "$answer" =~ "y" ]] || [[ "$answer" =~ "Y" ]]; then
-    info "Replacing /etc/network/interfaces"
+    info "Изменение /etc/network/interfaces"
     curl -sL "${URL_INTERFACES}" > "${FILE_INTERFACES}";
 fi
 
-info "Restarting NetworkManager"
+info "Перезапуск NetworkManager"
 systemctl restart "${SERVICE_NM}"
 
 # Parse command line parameters
@@ -137,7 +137,7 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         *)
-            error "Unrecognized option $1"
+            error "Неопознанная опция $1"
             ;;
     esac
     shift
@@ -177,12 +177,12 @@ case $ARCH in
         HASSIO_DOCKER="$DOCKER_REPO/aarch64-hassio-supervisor"
     ;;
     *)
-        error "$ARCH unknown!"
+        error "$ARCH неизвестна!"
     ;;
 esac
 
 if [[ ! "${MACHINE}" =~ ^(intel-nuc|odroid-c2|odroid-n2|odroid-xu|qemuarm|qemuarm-64|qemux86|qemux86-64|raspberrypi|raspberrypi2|raspberrypi3|raspberrypi4|raspberrypi3-64|raspberrypi4-64|tinker)$ ]]; then
-    error "Unknown machine type ${MACHINE}!"
+    error "Неизвестный тип сервера ${MACHINE}!"
 fi
 
 ### Main
@@ -214,13 +214,13 @@ EOF
 
 ##
 # Pull supervisor image
-info "Install supervisor Docker container"
+info "Установка контейнера Docker Supervisor"
 docker pull "$HASSIO_DOCKER:$HASSIO_VERSION" > /dev/null
 docker tag "$HASSIO_DOCKER:$HASSIO_VERSION" "$HASSIO_DOCKER:latest" > /dev/null
 
 ##
 # Install Hass.io Supervisor
-info "Install supervisor startup scripts"
+info "Установка загрузочных скриптов supervisor"
 curl -sL ${URL_BIN_HASSIO} > "${PREFIX}/sbin/hassio-supervisor"
 curl -sL ${URL_SERVICE_HASSIO} > "${SYSCONFDIR}/systemd/system/hassio-supervisor.service"
 
@@ -235,7 +235,7 @@ systemctl enable hassio-supervisor.service > /dev/null 2>&1;
 
 #
 # Install Hass.io AppArmor
-info "Install AppArmor scripts"
+info "Установка скриптов AppArmor"
 mkdir -p "${DATA_SHARE}/apparmor"
 curl -sL ${URL_BIN_APPARMOR} > "${PREFIX}/sbin/hassio-apparmor"
 curl -sL ${URL_SERVICE_APPARMOR} > "${SYSCONFDIR}/systemd/system/hassio-apparmor.service"
@@ -253,17 +253,18 @@ systemctl start hassio-apparmor.service
 
 ##
 # Init system
-info "Start Home Assistant Supervised"
+info "Запуск Home Assistant Supervised"
 systemctl start hassio-supervisor.service
 
 ##
 # Setup CLI
-info "Installing the 'ha' cli"
+info "Установка 'ha' cli"
 curl -sL ${URL_HA} > "${PREFIX}/bin/ha"
 chmod a+x "${PREFIX}/bin/ha"
 
 info
-info "Home Assistant supervised is now installed"
-info "First setup will take some time, when it's ready you can reach it here:"
+info "Home Assistant supervised установлен"
+info "Первый запуск может быть длительным (20 минут), когда все будет готово системв будет доступна по адресу:"
 info "http://${IP_ADDRESS}:8123"
 info
+info "Автор модификации скрипта будет принимпет благодорность за безсонные ночи в виде..."
