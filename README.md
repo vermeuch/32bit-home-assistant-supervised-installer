@@ -155,7 +155,7 @@ curl -sL "https://raw.githubusercontent.com/ntguest/32bit-home-assistant-supervi
 ## Раздел 3 - Установка ESPHome
 
 <details>
-  <summary> К превеликой скорби 32-битный аддон ESPHome не существует в природе, но если вам нужен, его можно установить в виртуальное окружение. Инструкция под катом.</summary>
+  <summary> Владельцы 64-битных систем также могут идти дальше. К превеликой скорби 32-битный аддон ESPHome не существует в природе, но если вам нужен, его можно установить в виртуальное окружение. Инструкция под катом.</summary>
 
 
   Шаг 1: Установите следующие зависимости с помощью этих команд:
@@ -257,6 +257,16 @@ reboot
 
 Система перезагрузится, а HACS будет находиться в разделе интеграции. 
 
+
 ## Теперь можно вводить пользователя и пользоваться
 
+<details>
+<summary> Вот, что в итоге должно получиться  </summary> 
+
+  ![image](https://user-images.githubusercontent.com/69485846/144156382-cf0f055c-edfe-4bc2-aa84-bef95268eb70.png)
+  ![image](https://user-images.githubusercontent.com/69485846/144156782-8f31cd4b-b046-4622-a6ef-6a286027bc26.png)
+
+  </details>
+  
+  
 Ну и конечно не забываем [<img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-2.svg" alt="BuyMeACoffee" width="100">](https://www.buymeacoffee.com/ntguest)    или    [<img src="https://hsto.org/getpro/geektimes/post_images/7a9/b88/258/7a9b882584c6ea6ed1f48e96be00a187.png" width="100">](https://yoomoney.ru/to/410011383527168)
