@@ -8,11 +8,11 @@ function warn  { echo -e "\e[33m[warn] $*\e[39m"; }
 function error { echo -e "\e[31m[error] $*\e[39m"; exit 1; }
 
 info ""
-info "This script is taken from the official"
+info "A long time ago this script was the way to install official"
 info ""
-info "Home Assistant Supervised script available at"
+info "Home Assistant Supervised"
 info ""
-info "https://github.com/home-assistant/supervised-installer"
+info "But now it modified and still up to date"
 info ""
 
 sleep 10
@@ -267,3 +267,4 @@ info "Home Assistant supervised is now installed"
 info "First setup will take some time, when it's ready you can reach it here:"
 info "http://${IP_ADDRESS}:8123"
 info
+info "Don't forget visit https://www.buymeacoffee.com/ntguest"
