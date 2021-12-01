@@ -162,7 +162,7 @@ curl -sL "https://raw.githubusercontent.com/ntguest/32bit-home-assistant-supervi
 
   ```bash  
 export PATH=$PATH:/usr/sbin
-apt-get sudo install python3-dev python3-venv python3-pip libffi-dev libssl-dev -y
+apt-get install sudo python3-dev python3-venv python3-pip libffi-dev libssl-dev -y
   ```
 
   Шаг 2: Добавьте пользователя, папки и права:
