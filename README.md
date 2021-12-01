@@ -3,7 +3,8 @@
 [![Donate](https://img.shields.io/badge/donate-Yandex-blueviolet.svg)](https://yoomoney.ru/to/410011383527168)
 
 # 32bit-home-assistant-supervised-installer
-Home Assistant supervised installer for 32bit systems
+Home Assistant supervised and ESPHome installer for 32bit systems.
+
 Описание на русском языке доступно [ЗДЕСЬ](https://github.com/ntguest/32bit-home-assistant-supervised-installer/blob/main/README-RUSSIAN.md)
 
 ## Installing Home Assistant Supervised on Debian 11
