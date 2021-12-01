@@ -4,22 +4,23 @@
 
 # 32bit-home-assistant-supervised-installer
 Home Assistant supervised installer for 32bit systems
+Описание на русском языке доступно [ЗДЕСЬ](https://github.com/ntguest/32bit-home-assistant-supervised-installer/blob/main/README-RUSSIAN.md)
 
-## Установка Home Assistant Supervised на Debian 11
+## Installing Home Assistant Supervised on Debian 11
 
-Это руководство поможет вам установить Home Assistant Supervised практически на любой тип компьютера, включая нетбуки, неттопы и старые ПК с 32 битным процессором.
+This guide will help you to install Home Assistant Supervised, on almost any machine type you choose, even netbooks, nettops and old PCs with 32bit CPU. 
 
-Используя Debian 11 и следуя строгому набору правил, доступных [ЗДЕСЬ](https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md), вы получите поддерживаемую установку Home Assistant Supervised. Если вы в любой момент решите установить дополнительное программное обеспечение для операционной системы Debian, ваша установка станет официально не поддерживаемой. Однако поддержка доступна через форумы сообщества.
+:warning: Using Debian 11 and following a strict set of guidelines available [HERE](https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md) will give you a supported installation of Home Assistant Supervised. If you choose at anytime to install additional software to the Debian operating system, your installation will become officially unsupported. Community support via the forums is always available however.
 
-Несмотря на то, что были приложены все усилия, чтобы это руководство соответствовало [ADR-0014](https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md), нет гарантии работоспособности в будущем.
+While every effort has been made to ensure this guide complies with [ADR-0014](https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md), no guarantee can be made it does now, or in the future.
 
-В этом руководстве вы будете использовать Debian 11 в качестве операционной системы. Этот тип установки называется «безголовым», и после завершения установки вам не потребуется подключать клавиатуру, мышь или монитор, хотя вы можете это сделать, если хотите.
+In this guide, you will be using Debian 11 as the operating system. This type of installation is what is called “headless” and after the installation is complete, you will not need to have a keyboard, mouse or monitor attached, although you can if you prefer.
 
-#### Что такое Home Assistant Supervised? ####
+#### What is Home Assistant Supervised? ####
 
-Home Assistant - это экосистема домашней автоматизации с полным пользовательским интерфейсом, в которой работают Home Assistant Core, Home Assistant Supervisor и надстройки. Он предустановлен в ОС Home Assistant, но может быть установлен в любой системе Linux. Он использует Docker, которым управляет Home Assistant Supervisor, плюс дополнительное преимущество десятков надстроек (например, магазин приложений), которые изначально работают в среде Home Assistant.
+Home Assistant is a full UI managed home automation ecosystem that runs Home Assistant Core, the Home Assistant Supervisor and add-ons. It comes pre-installed on Home Assistant OS, but can be installed on any Linux system. It leverages Docker, which is managed by the Home Assistant Supervisor plus the added benefit of dozens of add-ons (think app store) that work natively inside the Home Assistant environment.
 
-Если вы новичок в Home Assistant, теперь вы можете перейти к Разделу 1, если вам нужна помощь в установке Debian 11. Если у вас уже установлен Debian 11 и вы хотите перейти к установке Home Assistant, перейдите к Разделу 2.
+If you are new to Home Assistant, you can now proceed to Section 1 if you need assistance with installing Debian 11. If you already have Debian 11 installed and wish to move on to installing Home Assistant, move on to Section 2.
 
 
 
@@ -30,7 +31,7 @@ Home Assistant - это экосистема домашней автоматиз
 Для Debian существует [крошечный образ](https://deb.debian.org/debian/dists/Debian11.1/main/installer-i386/current/images/netboot/mini.iso), который имеет размер всего 41 мб. Там находятся самый минимум, который позволяет запустить процесс установки и скачать все необходимое из сети в процессе. Записываем его любой программой для записи образов на флешку, вставляем ее в свой ПК и устанавливаем в BIOS загрузку с USB.
 
 <details>
-  <summary> Если вам нужно пошаговое руководство по установке Debian 11 на ваш компьютер, щелкните здесь, чтобы просмотреть инструкции. </summary>
+  <summary> If you would like a step by step guide on how to install Debian 11 to your machine, click here to expand for instructions. </summary>
 
 
 Простота процесса установки Debian позволяет в нескольких картинках показать практически все. Пробежимся бегло.
@@ -93,10 +94,11 @@ Home Assistant - это экосистема домашней автоматиз
   
 </details>
 
-## Раздел 2 - Установка Home Assistant Supervised
+## Section 2 – Install Home Assistant Supervised
 
-Шаг 1: Установите следующие зависимости с помощью этих команд:
+With Debian installed, you can move on to installing Home Assistant Supervised.
 
+Step 1: First you will start by updating the Debian OS to make sure all the latest updates, security patches and nessesary dependacy's are installed. To do this, log into the terminal of your machine, enter the following command and press enter.
 ```bash
 su -
 ```
@@ -105,35 +107,36 @@ apt update && apt upgrade -y && apt autoremove -y
 apt-get install software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager wget udisks2 libglib2.0-bin unzip -y
 ```
 
-Шаг 2: Остановите и отключите Modem Manager:
+Step 2: Stop and disable Modem Manager:
 
 ```bash
 systemctl disable ModemManager
 systemctl stop ModemManager
 ```
 
-Шаг 3: Установите Docker-IO:
+Step 3: Install Docker-IO:
 
 ```bash
 apt install -y docker.io
 ```
 
-Step 4: Установите OS-Agent:
+Step 4: Install OS-Agent:
 
 ```bash
 wget https://github.com/home-assistant/os-agent/releases/download/1.2.2/os-agent_1.2.2_linux_i386.deb
 dpkg -i os-agent_1.2.2_linux_i386.deb
 ```
 
-Актуальные инструкции по установке OS-Agent заходятся [ЗДЕСЬ](https://github.com/home-assistant/os-agent/tree/main#using-home-assistant-supervised-on-debian)
+Instructions for installing the OS-Agent can be found [here](https://github.com/home-assistant/os-agent/tree/main#using-home-assistant-supervised-on-debian)
 
-Step 5: Запустите скрипт установки Home Assisistant Supervised Debian:
+
+Step 5: Start script to install Home Assisistant Supervised:
 
 ```bash
 curl -sL "https://raw.githubusercontent.com/ntguest/32bit-home-assistant-supervised-installer/master/files/installer-ru.sh" | bash -s -- -m qemux86
 ```
 
-Также этот скрипт можно использовать и для других типы машин
+Also supported next Machine types:
 ```
 - generic-x86-64
 - odroid-c2
@@ -152,22 +155,22 @@ curl -sL "https://raw.githubusercontent.com/ntguest/32bit-home-assistant-supervi
 - tinker
 - khadas-vim3
 ```  
-Следуйте инструкциям на экране
+Follow instructions
 
-## Раздел 3 - Установка ESPHome
+## Section 3 - Install ESPHome
 
 <details>
-  <summary> Владельцы 64-битных систем также могут идти дальше. К превеликой скорби 32-битный аддон ESPHome не существует в природе, но если вам нужен, его можно установить в виртуальное окружение. Инструкция под катом.</summary>
+  <summary> Owners of 64bit machines can pass this section. Addon on Home Assistant Supervised require only 64bit but we can install esphome into virtual enviroment.</summary>
 
 
-  Шаг 1: Установите следующие зависимости с помощью этих команд:
+  Step 1: Install the following dependacy's with this command:
 
   ```bash  
 export PATH=$PATH:/usr/sbin
 apt-get install sudo python3-dev python3-venv python3-pip libffi-dev libssl-dev -y
   ```
 
-  Шаг 2: Добавьте пользователя, папки и права:
+  Step 2: Add user, folders and rights:
   
   ```bash  
 useradd -rm esp -G dialout
@@ -176,7 +179,7 @@ mkdir esp
 chown esp:esp esp
   ```
 
-  Шаг 3: Установите ESPHome 
+  Step 3: Install ESPHome 
   ```bash 
 sudo -u esp -H -s
 cd /srv/esp
@@ -191,7 +194,7 @@ pip3 install esphome
 exit
   ```
 
-  Шаг 4: Добавьте рабочую папку и права
+  Step 4: Add working folder and rights
 
   ```bash 
 cd /usr/share/hassio/homeassistant
@@ -199,15 +202,15 @@ mkdir esphome
 chown esp:esp esphome
   ```
   
-  Шаг 5: Создайте службу
+  Step 5: Install service
   
-  Запускаем редактор nano
+  Start nano editor
   
   ```bash
 nano /etc/systemd/system/esphome.service
   ```
   
-  Следующий блок копируем целиком и вставляем в редактор
+  Next block copy and paste into editor
   
   ```
 [Unit]
@@ -224,20 +227,20 @@ Restart=always
 WantedBy=multi-user.target
   ```
   
-  Для окончания нажмите
+  To finish press
   
   ```
-  CTRL+O, Enter и CTRL+X
+  CTRL+O, Enter and CTRL+X
   ```
   
-  Активируйте службу
+  Enable service
   ```bash
 systemctl --system daemon-reload
 systemctl enable esphome.service
   ```
-  Панель ESPHome можно добавить как панель Lovelace iframe с адресом сервера и портом 6052
+  ESPHome panel you can add as Lovelace iframe panel with servers IP and port 6052
   
-## В дальнейшем обновление можно делать следующими командами:
+## Later you can update esphome with this commands:
 
   ```bash
 su -
@@ -252,22 +255,22 @@ systemctl restart esphome.service
   ```
 </details>
 
-## Раздел 4 - Установка HACS
+## Section 4 - Install HACS
 
-Здесь совсем все просто. Дождитесь появления окна установки пароля Ноme Assistant. Можно ничего не вводить, переключиться обратно в терминал и:
+It's really simle. Дождитесь появления окна установки пароля Ноme Assistant. Можно ничего не вводить, переключиться обратно в терминал и:
 
 ```bash
 curl -sfSL https://hacs.xyz/install | bash -
 reboot
 ```
 
-Система перезагрузится, а HACS будет находиться в разделе интеграции. 
+System will reboot and you can find HACS in integrations. 
 
 
 ## Теперь можно вводить пользователя и пользоваться
 
 <details>
-<summary> Вот, что в итоге должно получиться  </summary> 
+<summary> What you will get  </summary> 
 
   ![image](https://user-images.githubusercontent.com/69485846/144156382-cf0f055c-edfe-4bc2-aa84-bef95268eb70.png)
   ![image](https://user-images.githubusercontent.com/69485846/144156782-8f31cd4b-b046-4622-a6ef-6a286027bc26.png)
@@ -275,4 +278,4 @@ reboot
   </details>
   
   
-Ну и конечно не забываем [<img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-2.svg" alt="BuyMeACoffee" width="100">](https://www.buymeacoffee.com/ntguest)    или    [<img src="https://hsto.org/getpro/geektimes/post_images/7a9/b88/258/7a9b882584c6ea6ed1f48e96be00a187.png" width="100">](https://yoomoney.ru/to/410011383527168)
+And of course [<img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-2.svg" alt="BuyMeACoffee" width="100">](https://www.buymeacoffee.com/ntguest)    or    [<img src="https://hsto.org/getpro/geektimes/post_images/7a9/b88/258/7a9b882584c6ea6ed1f48e96be00a187.png" width="100">](https://yoomoney.ru/to/410011383527168)
