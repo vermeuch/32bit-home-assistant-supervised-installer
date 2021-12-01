@@ -28,7 +28,7 @@ If you are new to Home Assistant, you can now proceed to Section 1 if you need a
 
 ## Section 1 – Install Debian
 
-This guide for 32bit systems but you can use it and fo r other types.
+This guide for 32bit systems but you can use it and for other types.
 
 <details>
   <summary> If you would like a step by step guide on how to install Debian 11 to your machine, click here to expand for instructions. </summary>
