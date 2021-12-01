@@ -180,6 +180,8 @@ sudo -u esp -H -s
 cd /srv/esp
 python3 -m venv .
 source bin/activate
+  ```
+  ```bash
 python3 -m pip install wheel
 export CRYPTOGRAPHY_DONT_BUILD_RUST=1
 pip install cryptography==3.1.1
