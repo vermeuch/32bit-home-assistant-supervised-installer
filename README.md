@@ -1,4 +1,4 @@
-[![hacs_badge](https://img.shields.io/badge/HAss-Default-blue.svg)](https://www.home-assistant.io/)
+[![hacs_badge](https://img.shields.io/badge/HAss-Installer-blue.svg)](https://www.home-assistant.io/)
 [![Donate](https://img.shields.io/badge/donate-Pizza-yellow.svg)](https://www.buymeacoffee.com/ntguest)
 [![Donate](https://img.shields.io/badge/donate-Yandex-blueviolet.svg)](https://yoomoney.ru/to/410011383527168)
 
@@ -26,6 +26,8 @@ Home Assistant - это экосистема домашней автоматиз
 
 
 ## Раздел 1 - Установка Debian
+
+Для Debian существует [крошечный образ](https://deb.debian.org/debian/dists/Debian11.1/main/installer-i386/current/images/netboot/mini.iso), который имеет размер всего 41 мб. Там находятся самый минимум, который позволяет запустить процесс установки и скачать все необходимое из сети в процессе. Записываем его любой программой для записи образов на флешку, вставляем ее в свой ПК и устанавливаем в BIOS загрузку с USB.
 
 <details>
   <summary> Если вам нужно пошаговое руководство по установке Debian 11 на ваш компьютер, щелкните здесь, чтобы просмотреть инструкции. </summary>
@@ -196,7 +198,7 @@ WantedBy=multi-user.target
 systemctl --system daemon-reload
 systemctl enable esphome.service
   ```
-  Панель ESPHome можно доваить как панель Lovelace iframe с адресом сервера и портом 6052
+  Панель ESPHome можно добавить как панель Lovelace iframe с адресом сервера и портом 6052
   
 ## В дальнейшем обновление можно делать следующими командами:
 
@@ -223,3 +225,5 @@ reboot
 Система перезагрузится, а HACS будет находиться в разделе интеграции. 
 
 ## Теперь можно вводить пользователя и пользоваться
+
+Ну и конечно не забываем  [<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="BuyMeACoffee" width="100">](https://www.buymeacoffee.com/ntguest) или [<img src="https://aboutcash.ru/wp-content/uploads/2017/02/yandex-dengi-privatbank.jpg"](https://yoomoney.ru/to/410011383527168)
