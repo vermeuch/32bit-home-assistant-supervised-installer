@@ -9,7 +9,7 @@ Home Assistant supervised installer for 32bit systems
 
 Это руководство поможет вам установить Home Assistant Supervised практически на любой тип компьютера, включая нетбуки, неттопы и старые ПК с 32 битным процессором.
 
-:warning: Используя Debian 11 и следуя строгому набору правил, доступных [ЗДЕСЬ](https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md), вы получите поддерживаемую установку Home Assistant Supervised. Если вы в любой момент решите установить дополнительное программное обеспечение для операционной системы Debian, ваша установка станет официально не поддерживаемой. Однако поддержка доступна через форумы сообщества.
+Используя Debian 11 и следуя строгому набору правил, доступных [ЗДЕСЬ](https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md), вы получите поддерживаемую установку Home Assistant Supervised. Если вы в любой момент решите установить дополнительное программное обеспечение для операционной системы Debian, ваша установка станет официально не поддерживаемой. Однако поддержка доступна через форумы сообщества.
 
 Несмотря на то, что были приложены все усилия, чтобы это руководство соответствовало [ADR-0014](https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md), нет гарантии работоспособности в будущем.
 
@@ -34,37 +34,63 @@ Home Assistant - это экосистема домашней автоматиз
 
 
 Простота процесса установки Debian позволяет в нескольких картинках показать практически все. Пробежимся бегло.
+  
+  
 ![VirtualBox_test_17_03_2021_23_31_42](https://user-images.githubusercontent.com/69485846/144154022-35236a2e-6a84-4e5e-85e7-2370dfdd71ee.png)
   
   Нажимаем Enter
   
 ![VirtualBox_test_17_03_2021_23_32_48](https://user-images.githubusercontent.com/69485846/144154024-7329dfda-fdd1-455b-968e-ee7dd0e3b035.png)
+  
+  Выбираем язык
+  
 ![VirtualBox_test_17_03_2021_23_33_09](https://user-images.githubusercontent.com/69485846/144154025-d9ea0814-01bd-40de-b59e-08d8f25298c0.png)
+  
+  Страну
+  
 ![VirtualBox_test_17_03_2021_23_33_30](https://user-images.githubusercontent.com/69485846/144154027-c37b3cf9-81c7-4f69-b3ab-e319744a940c.png)
+  
+  Раскладку клавиатуры
+  
 ![VirtualBox_test_17_03_2021_23_33_44](https://user-images.githubusercontent.com/69485846/144154028-51a31699-748d-4dce-8f1a-288a03bf9055.png)
+  
+  Комбинацию клавиш, для переключения раскладки
+  
 ![VirtualBox_test_17_03_2021_23_34_37](https://user-images.githubusercontent.com/69485846/144154029-db5ee106-d8c7-466f-8af0-e993d351338a.png)
+  
+  Придумываем прикольное имя компьютера
+  
 ![VirtualBox_test_17_03_2021_23_35_07](https://user-images.githubusercontent.com/69485846/144154030-d293820e-fa62-4a32-a3d9-1f2d68fb4cb5.png)
+  
+  Жмем Enter
+  
 ![VirtualBox_test_17_03_2021_23_35_20](https://user-images.githubusercontent.com/69485846/144154031-2e0d4668-fe6f-4629-bd05-5b3b674842fb.png)
+  
+  Еще раз
+  
 ![VirtualBox_test_17_03_2021_23_42_39](https://user-images.githubusercontent.com/69485846/144154033-713cf51b-7b64-40aa-8626-187a8c4adbfd.png)
+  
+  Используем весь диск
+  
 ![VirtualBox_test_17_03_2021_23_43_06](https://user-images.githubusercontent.com/69485846/144154035-707e42a5-8e14-4647-9eaa-28da3bc2dadc.png)
+  
+  И один раздел
+  
 ![VirtualBox_test_17_03_2021_23_43_27](https://user-images.githubusercontent.com/69485846/144154037-19e52d60-7362-41c9-9f57-1f00109960c7.png)
+  
+  Записываем изменения на диск
+  
 ![VirtualBox_test_17_03_2021_23_50_33](https://user-images.githubusercontent.com/69485846/144154040-58ea82d4-1490-40e6-8afd-14bbcec39c19.png)
+  
+  Я ставлю только SSH. Остальное по желанию.
+  
 ![VirtualBox_test_17_03_2021_23_52_06](https://user-images.githubusercontent.com/69485846/144154041-7a2634c9-177b-4d19-aae0-c5eb6bc0e32b.png)
-
-1600x_image.png?1618757210
-Нажимаем Enter1600x_image.png?1618757210
-Выбираем язык1600x_image.png?1618757207
-Страну
-1600x_image.png?1618757207
-Раскладку клавиатуры1600x_image.png?1618757210Комбинацию клавиш, для переключения раскладки1600x_image.png?1618757208Придумываем прикольное имя компьютера
-1600x_image.png?1618757210
-Жмем Enter
-1600x_image.png?1618757211Используем весь диск1600x_image.png?1618757212
-И один раздел
-1600x_image.png?1618757213Записываем изменения на диск1600x_image.png?1618757213
-Я ставлю тольrj SSH. Остальное по желанию.1600x_image.png?1618757215
-И последний раз Enter
-С установкой закончили. Если я что-то и попустил, то все достаточно понятно и задокументировано.
+  
+  И последний раз Enter
+  
+  
+  С установкой закончили. Если я что-то и попустил, то все достаточно понятно и задокументировано в сети.
+  
 </details>
 
 ## Раздел 2 - Установка Home Assistant Supervised
