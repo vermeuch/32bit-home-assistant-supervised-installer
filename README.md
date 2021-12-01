@@ -226,4 +226,4 @@ reboot
 
 ## Теперь можно вводить пользователя и пользоваться
 
-Ну и конечно не забываем  [<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="BuyMeACoffee" width="100">](https://www.buymeacoffee.com/ntguest) или [<img src="https://aboutcash.ru/wp-content/uploads/2017/02/yandex-dengi-privatbank.jpg"](https://yoomoney.ru/to/410011383527168)
+Ну и конечно не забываем  [<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="BuyMeACoffee" width="100">](https://www.buymeacoffee.com/ntguest) или [<img src="https://hsto.org/getpro/geektimes/post_images/7a9/b88/258/7a9b882584c6ea6ed1f48e96be00a187.png" width="100">](https://yoomoney.ru/to/410011383527168)
