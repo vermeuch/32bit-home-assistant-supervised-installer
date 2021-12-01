@@ -243,3 +243,5 @@ System will reboot and you can find HACS in integrations.
 
   
 And of course don't forget [<img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-2.svg" alt="BuyMeACoffee" width="100">](https://www.buymeacoffee.com/ntguest)    or    [<img src="https://hsto.org/getpro/geektimes/post_images/7a9/b88/258/7a9b882584c6ea6ed1f48e96be00a187.png" width="100">](https://yoomoney.ru/to/410011383527168)
+
+My great thanks to [Kanga-Who](https://github.com/Kanga-Who/home-assistant)
