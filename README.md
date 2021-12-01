@@ -99,6 +99,8 @@ Home Assistant - это экосистема домашней автоматиз
 
 ```bash
 su -
+```
+```bash
 apt update && apt upgrade -y && apt autoremove -y
 apt-get install software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager wget udisks2 libglib2.0-bin unzip -y
 ```
@@ -239,6 +241,8 @@ systemctl enable esphome.service
 
   ```bash
 su -
+  ```
+  ```bash
 sudo -u esp -H -s
 cd /srv/esp
 source bin/activate
