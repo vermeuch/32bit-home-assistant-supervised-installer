@@ -133,7 +133,7 @@ Instructions for installing the OS-Agent can be found [here](https://github.com/
 Step 5: Start script to install Home Assisistant Supervised:
 
 ```bash
-curl -sL "https://raw.githubusercontent.com/ntguest/32bit-home-assistant-supervised-installer/master/files/installer-ru.sh" | bash -s -- -m qemux86
+curl -sL "https://raw.githubusercontent.com/ntguest/32bit-home-assistant-supervised-installer/master/files/installer.sh" | bash -s -- -m qemux86
 ```
 
 Also supported next Machine types:
