@@ -129,7 +129,9 @@ curl -sL "https://raw.githubusercontent.com/ntguest/32bit-home-assistant-supervi
 export PATH=$PATH:/usr/sbin
 apt-get sudo install python3-dev python3-venv python3-pip libffi-dev libssl-dev -y
   ```
+
   Шаг 2: Добавьте пользователя, папки и права:
+  
   ```bash  
 useradd -rm esp -G dialout
 cd /srv
@@ -137,6 +139,7 @@ mkdir esp
 chown esp:esp esp
   ```
 
+  Шаг 3: Установите ESPHome 
   ```bash 
 sudo -u esp -H -s
 cd /srv/esp
@@ -146,18 +149,26 @@ python3 -m pip install wheel
 export CRYPTOGRAPHY_DONT_BUILD_RUST=1
 pip install cryptography==3.1.1
 pip3 install esphome
+exit
   ```
 
+  Шаг 4: Добавьте рабочую папку и права
+
   ```bash 
-exit
 cd /usr/share/hassio/homeassistant
 mkdir esphome
 chown esp:esp esphome
   ```
   
+  Шаг 5: Создайте службу
+  
+  Запускаем редактор nano
+  
   ```bash
 nano /etc/systemd/system/esphome.service
   ```
+  
+  Следующий блок копируем целиком и вставляем в редактор
   
   ```
 [Unit]
@@ -174,16 +185,21 @@ Restart=always
 WantedBy=multi-user.target
   ```
   
+  Для окончания нажмите
+  
   ```
-  CTRL+O и CTRL+X
+  CTRL+O, Enter и CTRL+X
   ```
   
+  Активируйте службу
   ```bash
 systemctl --system daemon-reload
 systemctl enable esphome.service
-systemctl start esphome.service
   ```
+  Панель ESPHome можно доваить как панель Lovelace iframe с адресом сервера и портом 6052
   
+## В дальнейшем обновление можно делать следующими командами:
+
   ```bash
 su -
 sudo -u esp -H -s
@@ -197,6 +213,13 @@ systemctl restart esphome.service
 
 ## Раздел 4 - Установка HACS
 
+Здесь совсем все просто. Дождитесь появления окна установки пароля Ноme Assistant. Можно ничего не вводить, переключиться обратно в терминал и:
+
 ```bash
 curl -sfSL https://hacs.xyz/install | bash -
+reboot
 ```
+
+Система перезагрузится, а HACS будет находиться в разделе интеграции. 
+
+## Теперь можно вводить пользователя и пользоваться
