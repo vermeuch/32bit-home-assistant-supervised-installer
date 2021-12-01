@@ -8,7 +8,7 @@ function warn  { echo -e "\e[33m[warn] $*\e[39m"; }
 function error { echo -e "\e[31m[error] $*\e[39m"; exit 1; }
 
 info ""
-info "Первоначально это был официальный скрипт установки"
+info "В глубокой древности это был официальный скрипт установки"
 info ""
 info "Home Assistant Supervised"
 info ""
