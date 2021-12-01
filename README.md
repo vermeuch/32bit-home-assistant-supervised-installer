@@ -26,71 +26,43 @@ If you are new to Home Assistant, you can now proceed to Section 1 if you need a
 
 
 
-## Раздел 1 - Установка Debian
+## Section 1 – Install Debian
 
-Для Debian существует [крошечный образ](https://deb.debian.org/debian/dists/Debian11.1/main/installer-i386/current/images/netboot/mini.iso), который имеет размер всего 41 мб. Там находятся самый минимум, который позволяет запустить процесс установки и скачать все необходимое из сети в процессе. Записываем его любой программой для записи образов на флешку, вставляем ее в свой ПК и устанавливаем в BIOS загрузку с USB.
+This guide for 32bit systems but you can use it and fo r other types.
 
 <details>
   <summary> If you would like a step by step guide on how to install Debian 11 to your machine, click here to expand for instructions. </summary>
 
 
-Простота процесса установки Debian позволяет в нескольких картинках показать практически все. Пробежимся бегло.
-  
-  
-![VirtualBox_test_17_03_2021_23_31_42](https://user-images.githubusercontent.com/69485846/144154022-35236a2e-6a84-4e5e-85e7-2370dfdd71ee.png)
-  
-  Нажимаем Enter
-  
-![VirtualBox_test_17_03_2021_23_32_48](https://user-images.githubusercontent.com/69485846/144154024-7329dfda-fdd1-455b-968e-ee7dd0e3b035.png)
-  
-  Выбираем язык
-  
-![VirtualBox_test_17_03_2021_23_33_09](https://user-images.githubusercontent.com/69485846/144154025-d9ea0814-01bd-40de-b59e-08d8f25298c0.png)
-  
-  Страну
-  
-![VirtualBox_test_17_03_2021_23_33_30](https://user-images.githubusercontent.com/69485846/144154027-c37b3cf9-81c7-4f69-b3ab-e319744a940c.png)
-  
-  Раскладку клавиатуры
-  
-![VirtualBox_test_17_03_2021_23_33_44](https://user-images.githubusercontent.com/69485846/144154028-51a31699-748d-4dce-8f1a-288a03bf9055.png)
-  
-  Комбинацию клавиш, для переключения раскладки
-  
-![VirtualBox_test_17_03_2021_23_34_37](https://user-images.githubusercontent.com/69485846/144154029-db5ee106-d8c7-466f-8af0-e993d351338a.png)
-  
-  Придумываем прикольное имя компьютера
-  
-![VirtualBox_test_17_03_2021_23_35_07](https://user-images.githubusercontent.com/69485846/144154030-d293820e-fa62-4a32-a3d9-1f2d68fb4cb5.png)
-  
-  Жмем Enter
-  
-![VirtualBox_test_17_03_2021_23_35_20](https://user-images.githubusercontent.com/69485846/144154031-2e0d4668-fe6f-4629-bd05-5b3b674842fb.png)
-  
-  Еще раз
-  
-![VirtualBox_test_17_03_2021_23_42_39](https://user-images.githubusercontent.com/69485846/144154033-713cf51b-7b64-40aa-8626-187a8c4adbfd.png)
-  
-  Используем весь диск
-  
-![VirtualBox_test_17_03_2021_23_43_06](https://user-images.githubusercontent.com/69485846/144154035-707e42a5-8e14-4647-9eaa-28da3bc2dadc.png)
-  
-  И один раздел
-  
-![VirtualBox_test_17_03_2021_23_43_27](https://user-images.githubusercontent.com/69485846/144154037-19e52d60-7362-41c9-9f57-1f00109960c7.png)
-  
-  Записываем изменения на диск
-  
-![VirtualBox_test_17_03_2021_23_50_33](https://user-images.githubusercontent.com/69485846/144154040-58ea82d4-1490-40e6-8afd-14bbcec39c19.png)
-  
-  Я ставлю только SSH. Остальное по желанию.
-  
-![VirtualBox_test_17_03_2021_23_52_06](https://user-images.githubusercontent.com/69485846/144154041-7a2634c9-177b-4d19-aae0-c5eb6bc0e32b.png)
-  
-  И последний раз Enter
-  
-  
-  С установкой закончили. Если я что-то и попустил, то все достаточно понятно и задокументировано в сети.
+**1.1)** Start by downloading `mini.iso` from [HERE](https://deb.debian.org/debian/dists/Debian11.1/main/installer-i386/current/images/netboot/mini.iso). If you would prefer the full Debain image with all drivers, download `firmware-11.1.0-i386-DVD-1.iso` [HERE](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.1.0+nonfree/i386/iso-dvd/firmware-11.1.0-i386-DVD-1.iso)
+
+**1.2)** While Debian is downloading, you will need some other programs to help with the setup and installation. To burn the Debian ISO image to a USB thumb drive, you will use a program called Rufus which can be downloaded from [HERE](https://rufus.ie/). 
+
+**1.3)** You will now create a bootable USB drive using Rufus and the Debian image you have downloaded. Insert a blank USB drive of at least 8gb into your PC, open Rufus and choose your USB from the drop-down menu. Now select the Debian ISO image you downloaded, and click Start. If you get any prompts, select OK or Yes to continue. When this has completed, you can move on.
+
+**1.4)** Insert the USB you have just made into the new machine, connect a monitor, Ethernet cable, keyboard and mouse, and power on the machine. You will need to select the USB drive as the boot device, to do this, you will need to press something like F12 or DEL on your keyboard immediately when the machine is powered on.
+
+**1.5)**	The first screen you should be able to select from is **Main Menu**, on this screen, select **Graphical Debian Installer**
+
+**1.6)**	Next will be **Language**. Choose your language and click continue.
+
+**1.7)**	Next will be **Select your location**. Choose your country and click continue.
+
+**1.8)**	Next will be **Configure the keyboard**. Select your keyboard type and click continue. The installer will now perform some automated tasks which will take 1-2 minutes.
+
+**1.9)**	Next will be **Configure the network**. Here you can name your machine, the default name will be `debian`. Choose a name and click continue. You can skip the next page by clicking continue as you do not need to set a domain name. 
+
+**1.10)**	Next will be **Set up users and passwords**. You will be asked to create a password for the root user. Make a note of the password you choose here, and click continue.
+
+**1.11)**	Next will be **Set up users and passwords** again. Enter a username, click continue and on the next screen, enter a password for this user account. Make note of both of these, you will need them later.
+
+**1.12)**	Next will be **Configure the clock**. Select the correct time zone and click continue.
+
+**1.13)**	Next will be **Partition Disks**. Select **Guided - use entire disk** and then click continue. On the next screen make sure the correct disk is selected and click continue. On the next screen select **All files in one partition** and click continue. On the next screen, make sure **Finish partitioning and write changes to disk** is selected, and click continue. On the next screen, select **Yes** and then click continue. The installer will now perform some automated tasks. This will take 1-2 mins.
+
+**1.14)**	Next will be **Configure the package manager**. Select **Yes** and click continue. Select your Country and click continue. You can leave the default selection **deb.debian.org** selected, or select another mirror of your choosing, and click continue. Leave the next page blank and click continue. The installer will now perform some automated tasks. This will take a few minutes.
+
+**1.15)**	Next will be **Install the GRUB bootloader**. Select **Yes** and click continue. Now select the drive you are installing Debian on, and click continue. The installer will now perform some automated tasks. This will take 1-2 mins and then installation will be complete.
   
 </details>
 
@@ -170,7 +142,7 @@ export PATH=$PATH:/usr/sbin
 apt-get install sudo python3-dev python3-venv python3-pip libffi-dev libssl-dev -y
   ```
 
-  Step 2: Add user, folders and rights:
+  Step 2: Add user, folder and rights:
   
   ```bash  
 useradd -rm esp -G dialout
@@ -257,7 +229,7 @@ systemctl restart esphome.service
 
 ## Section 4 - Install HACS
 
-It's really simle. Дождитесь появления окна установки пароля Ноme Assistant. Можно ничего не вводить, переключиться обратно в терминал и:
+It's really simle. Wait until the window for set Home Assistant user and password will appears. You can enter nothing, switch back to the terminal and:
 
 ```bash
 curl -sfSL https://hacs.xyz/install | bash -
@@ -267,15 +239,7 @@ reboot
 System will reboot and you can find HACS in integrations. 
 
 
-## Теперь можно вводить пользователя и пользоваться
+## Now system is ready to go
 
-<details>
-<summary> What you will get  </summary> 
-
-  ![image](https://user-images.githubusercontent.com/69485846/144156382-cf0f055c-edfe-4bc2-aa84-bef95268eb70.png)
-  ![image](https://user-images.githubusercontent.com/69485846/144156782-8f31cd4b-b046-4622-a6ef-6a286027bc26.png)
-
-  </details>
   
-  
-And of course [<img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-2.svg" alt="BuyMeACoffee" width="100">](https://www.buymeacoffee.com/ntguest)    or    [<img src="https://hsto.org/getpro/geektimes/post_images/7a9/b88/258/7a9b882584c6ea6ed1f48e96be00a187.png" width="100">](https://yoomoney.ru/to/410011383527168)
+And of course don't forget [<img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-2.svg" alt="BuyMeACoffee" width="100">](https://www.buymeacoffee.com/ntguest)    or    [<img src="https://hsto.org/getpro/geektimes/post_images/7a9/b88/258/7a9b882584c6ea6ed1f48e96be00a187.png" width="100">](https://yoomoney.ru/to/410011383527168)
