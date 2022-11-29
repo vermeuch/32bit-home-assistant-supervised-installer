@@ -33,7 +33,7 @@ FILE_INTERFACES="/etc/network/interfaces"
 FILE_NM_CONF="/etc/NetworkManager/NetworkManager.conf"
 FILE_NM_CONNECTION="/etc/NetworkManager/system-connections/default"
 
-URL_RAW_BASE="https://raw.githubusercontent.com/ntguest/32bit-home-assistant-supervised-installer/main/files"
+URL_RAW_BASE="https://raw.githubusercontent.com/vermeuch/32bit-home-assistant-supervised-installer/main/files"
 URL_VERSION="https://version.home-assistant.io/stable.json"
 URL_BIN_APPARMOR="${URL_RAW_BASE}/usr/sbin/hassio-apparmor"
 URL_BIN_HASSIO="${URL_RAW_BASE}/usr/sbin/hassio-supervisor"
